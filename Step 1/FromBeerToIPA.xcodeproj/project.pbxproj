@@ -16,6 +16,7 @@
 		11ED526B1DC34CB30039F17B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11ED52691DC34CB30039F17B /* Main.storyboard */; };
 		11ED526D1DC34CB30039F17B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11ED526C1DC34CB30039F17B /* Assets.xcassets */; };
 		11ED52701DC34CB30039F17B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11ED526E1DC34CB30039F17B /* LaunchScreen.storyboard */; };
+		32CA632A1DEDE48800B0B13A /* BeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA63291DEDE48800B0B13A /* BeerService.swift */; };
 		B12FB440F255A5FE8D9E38C4 /* Pods_FromBeerToIPA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EB96FCDE1297A2EE38910D /* Pods_FromBeerToIPA.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		11ED526C1DC34CB30039F17B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11ED526F1DC34CB30039F17B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11ED52711DC34CB30039F17B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32CA63291DEDE48800B0B13A /* BeerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerService.swift; path = Services/BeerService.swift; sourceTree = "<group>"; };
 		A6DE5F99002A87B2B683CEFD /* Pods-FromBeerToIPA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromBeerToIPA.release.xcconfig"; path = "Pods/Target Support Files/Pods-FromBeerToIPA/Pods-FromBeerToIPA.release.xcconfig"; sourceTree = "<group>"; };
 		D5EB96FCDE1297A2EE38910D /* Pods_FromBeerToIPA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FromBeerToIPA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F0B683801E5A97C5B17436 /* Pods-FromBeerToIPA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromBeerToIPA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FromBeerToIPA/Pods-FromBeerToIPA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				1158FDB81DC34ECD003931DC /* AppConfig.swift */,
 				1158FDBA1DC364BF003931DC /* AppUtils.swift */,
 				1158FDB21DC34DCA003931DC /* Models */,
+				32CA63281DEDE46C00B0B13A /* Services */,
 				1158FDB31DC34DCA003931DC /* ViewControllers */,
 				11ED52691DC34CB30039F17B /* Main.storyboard */,
 				11ED526C1DC34CB30039F17B /* Assets.xcassets */,
@@ -97,6 +100,14 @@
 				11ED52711DC34CB30039F17B /* Info.plist */,
 			);
 			path = FromBeerToIPA;
+			sourceTree = "<group>";
+		};
+		32CA63281DEDE46C00B0B13A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				32CA63291DEDE48800B0B13A /* BeerService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		BDC9324625E19059327E4A74 /* Frameworks */ = {
@@ -244,6 +255,7 @@
 				11ED52661DC34CB30039F17B /* AppDelegate.swift in Sources */,
 				1158FDBD1DC36F79003931DC /* BeerViewController.swift in Sources */,
 				1158FDB91DC34ECD003931DC /* AppConfig.swift in Sources */,
+				32CA632A1DEDE48800B0B13A /* BeerService.swift in Sources */,
 				1158FDB71DC34E0A003931DC /* Beer.swift in Sources */,
 				1158FDB51DC34DCA003931DC /* BeerTableViewController.swift in Sources */,
 			);

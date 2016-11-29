@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class BeerTableViewController: UITableViewController {
 
@@ -18,30 +16,20 @@ class BeerTableViewController: UITableViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     self.title = "Beers"
-    getBeers()
+    BeerService.getBeers(completionHandler: { beerResponse in
+      if beerResponse != nil {
+        self.beers = beerResponse!
+        self.tableView.reloadData()
+      } else {
+        print("Error getting beers")
+      }
+    })
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-  private func getBeers() {
-    let parameters = ["key": beerApiKey, "abv": "5", "p": "1", "hasLabels": "Y", "withBreweries": "Y", "isOrganic": "Y"]
-    Alamofire.request("\(beerApi)/beers", parameters: parameters).validate().responseJSON { response in
-      switch response.result {
-      case .success:
-        if let value = response.result.value {
-          //          print("Validation Successful\n\(value)")
-          self.beers = AppUtils.createBeers(fromJSON: JSON(value))
-          self.tableView.reloadData()
-        }
-      case .failure(let error):
-        print(error)
-      }
-    }
-  }
-
 
   // MARK: - Navigation
 

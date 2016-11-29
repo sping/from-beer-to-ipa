@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class BeerViewController: UIViewController {
 
@@ -21,17 +20,14 @@ class BeerViewController: UIViewController {
     // Do any additional setup after loading the view.
     self.title = beer.name
 
-    let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
-
-    Alamofire.download(beer.imageURL, to: destination).response { response in
-      if response.error == nil, let imagePath = response.destinationURL?.path {
-        if let image = UIImage(contentsOfFile: imagePath) {
-          print("IMAGE HAS BEEN DOWNLOADED BITCH")
-          self.imageView.image = image
-          self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(BeerViewController.shareBeer))
-        }
+    BeerService.getBeerImage(beer: beer, completionHandler: { beerImage in
+      if beerImage != nil {
+        self.imageView.image = beerImage!
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(BeerViewController.shareBeer))
+      } else {
+        print("Error getting beer image :(")
       }
-    }
+    })
 
     self.textView.text = beer.info
 
