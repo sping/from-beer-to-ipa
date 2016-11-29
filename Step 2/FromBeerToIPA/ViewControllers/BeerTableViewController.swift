@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 import RevealingSplashView
+import TableFlip
 
 class BeerTableViewController: UITableViewController {
 
@@ -19,7 +18,17 @@ class BeerTableViewController: UITableViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     self.title = "Beers"
-    getBeers()
+    self.tableView.backgroundColor = .white
+
+    BeerService.getBeers(completionHandler: { beerResponse in
+      if beerResponse != nil {
+        self.beers = beerResponse!
+        self.tableView.reloadData()
+        self.tableView.animateCells(animation: TableViewAnimation.Cell.left(duration: 0.8))
+      } else {
+        print("Error receiving beers")
+      }
+    })
 
     //Initialize a revealing Splash with with the iconImage, the initial size and the background color
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "BeerIcon")!,iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor(red:1, green:1, blue:1, alpha:1.0))
@@ -38,23 +47,6 @@ class BeerTableViewController: UITableViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-  private func getBeers() {
-    let parameters = ["key": beerApiKey, "abv": "5", "p": "1", "hasLabels": "Y", "withBreweries": "Y", "isOrganic": "Y"]
-    Alamofire.request("\(beerApi)/beers", parameters: parameters).validate().responseJSON { response in
-      switch response.result {
-      case .success:
-        if let value = response.result.value {
-          //          print("Validation Successful\n\(value)")
-          self.beers = AppUtils.createBeers(fromJSON: JSON(value))
-          self.tableView.reloadData()
-        }
-      case .failure(let error):
-        print(error)
-      }
-    }
-  }
-
 
   // MARK: - Navigation
 

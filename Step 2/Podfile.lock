@@ -1,18 +1,25 @@
 PODS:
   - Alamofire (4.0.1)
+  - AlamofireImage (3.1.0):
+    - Alamofire (~> 4.0)
   - RevealingSplashView (0.0.9)
   - SwiftyJSON (3.1.1)
+  - TableFlip (1.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - RevealingSplashView
   - SwiftyJSON
+  - TableFlip
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
   RevealingSplashView: 80b880b8eb014ea01fa0d15a9da26ba40d31a714
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+  TableFlip: b8de5321b5f4178ae9e850552c43f29000764933
 
-PODFILE CHECKSUM: c9e7b479c9568cedc0f59988f7d91afbc8e6feff
+PODFILE CHECKSUM: 3febb2107a90288dfbf6f461a5744bf302b9f610
 
-COCOAPODS: 1.1.0.rc.3
+COCOAPODS: 1.2.0.beta.1
