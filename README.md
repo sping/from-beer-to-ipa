@@ -8,7 +8,7 @@ Two examples projects of the native iOS app that we created realtime at the Mobi
 
 ## Installation
 
-As we said in the presentation we need to install Xcode and Cocoapods.
+As we said in the presentation we need to install [Xcode](https://itunes.apple.com/nl/app/xcode/id497799835?l=en&mt=12) and [Cocoapods](https://cocoapods.org).
 Just install Xcode from the Mac AppStore.
 
 Open up your Terminal and install Cocoapods using the following command:
@@ -33,11 +33,11 @@ To fetch beers we're using the BreweryDB API in this example. More info on [Brew
 
 ## Contributors
 
-* David Jupijn [@deejfit]("https://twitter.com/deejfit")
-* Manuel van Rijn [@manuelvanrijn]("https://twitter.com/manuelvanrijn")
-* Sebastiaan Seegers [@sebassie_s]("https://twitter.com/sebassie_s")
-* Sping [@spingnl]("https://twitter.com/spingnl")
-* Searchlite [@SearchLiteNL]("https://twitter.com/searchlitenl")
+* David Jupijn [@deejfit](https://twitter.com/deejfit)
+* Manuel van Rijn [@manuelvanrijn](https://twitter.com/manuelvanrijn)
+* Sebastiaan Seegers [@sebassie_s](https://twitter.com/sebassie_s)
+* Sping [@spingnl](https://twitter.com/spingnl)
+* Searchlite [@SearchLiteNL](https://twitter.com/searchlitenl)
 
 
 ## License
